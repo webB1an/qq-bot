@@ -12,13 +12,15 @@ if (process.env.NODE_ENV === 'dev' || !process.env.NODE_ENV) {
   dotenv.config({ path: './prod.env' })
 }
 
+import './bot'
+
 console.log('====================================================================')
 console.log('PORT', process.env.KDOCS_HASH_PASSWORD)
 console.log('====================================================================')
 
 const app: Express = express()
 const server: Server = http.createServer(app)
-const port = 3000
+const port = 3333
 
 app.use(cors())
 app.use(express.json())
